@@ -1,0 +1,72 @@
+<site name="Park Supermarkt" languages="nl" identifier="http://www.vanbergenkolpa.nl/parksupermarkt/">
+	<atom name="answer" fields="question;person;answer">
+		<field name="answer" type="text">
+			<param name="size" value="20" />
+		</field>
+		<field name="image" type="image">
+			<param name="path" value="images/" />
+			<param name="thumbwidth" value="210" />
+		</field>
+		<field name="question" type="link">
+			<param name="target" value="questions" />
+		</field>
+		<field name="person" type="link">
+			<param name="target" value="persons" />
+		</field>
+	</atom>
+	
+	<atom name="question" fields="longquestion;shortquestion;color">
+		<field name="shortquestion" type="string">
+			<param name="size" value="150" />
+		</field>
+		<field name="longquestion" type="string">
+			<param name="size" value="150" />
+		</field>
+		<field name="color" type="color" />
+	</atom>
+	
+	<atom name="person" fields="image;name">
+		<field name="name" type="character">
+			<param name="size" value="150" />
+		</field>
+		<field name="role" type="string">
+			<param name="size" value="150" />
+		</field>
+		<field name="image" type="image">
+			<param name="path" value="images/" />
+			<param name="thumbwidth" value="60" />
+		</field>
+	</atom>
+	
+	<atom name="news" fields="text">
+		<field name="text" type="string">
+			<param name="size" value="150" />
+		</field>
+		<field name="url" type="character">
+			<param name="size" value="250" />
+		</field>
+	</atom>
+	
+	<atom name="welcomepage" fields="title">
+		<field name="title" type="string">
+			<param name="size" value="150" />
+		</field>
+		<field name="text" type="text">
+			<param name="size" value="20" />
+		</field>
+	</atom>
+	
+	<atom name="backgroundimage" fields="image">
+		<field name="image" type="image">
+			<param name="path" value="images/" />
+		</field>
+	</atom>
+	
+	<list name="persons" target="person" ordering="custom" />
+	<list name="questions" target="question" ordering="custom" />
+	<list name="answers" target="answer" ordering="custom" />
+	<list name="news" target="news" ordering="custom" />
+	<list name="welcomepage" target="welcomepage" singleton="true" />
+	<list name="backgroundimages" target="backgroundimage" ordering="custom" />
+	
+</site>

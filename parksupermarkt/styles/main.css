@@ -1,0 +1,225 @@
+/*
+  Park Supermarkt
+  Copyright (C) 2012 by Systemantics, Bureau for Informatics
+
+  Systemantics GmbH
+  Alte Poststr. 38
+  47877 Willich
+  GERMANY
+
+  Web:    www.systemantics.net
+  Email:  hello@systemantics.net
+
+  Permission granted to use the files associated with this
+  website only on your webserver.
+
+  Changes to these files are PROHIBITED due to license restrictions.
+*/
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Clearfix hack by http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.cf:before,
+.cf:after {
+	content: "";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	zoom: 1;
+}
+
+/* Styles */
+
+body,
+input {
+	color: #000;
+	font: normal 10px/12px Verdana,sans-serif;
+}
+
+h1 {
+	font: normal 34px/34px 'Open Sans Condensed',Impact,sans-serif;
+	text-transform: uppercase;
+}
+
+h2 {
+	font: bold 18px/18px 'Open Sans Condensed',sans-serif;
+	text-transform: uppercase;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+#header {
+	background: #fff;
+	height: 34px;
+	margin: 10px;
+	padding: 5px 10px 9px;
+	position: relative;
+	z-index: 1;
+}
+
+#answers {
+	padding: 0 0 40px 10px;
+}
+
+.block {
+	background: #fff;
+	box-shadow: 2px 2px 0px #000;
+	margin: 0 10px 10px 0;
+	padding: 10px;
+	width: 210px;
+	-moz-box-shadow: 2px 2px 0px #000;
+	-webkit-box-shadow: 2px 2px 0px #000;
+}
+
+.menu {
+	float: left;
+	position: absolute;
+	top: 26px;
+	width: 150px;
+}
+
+#menu_persons {
+	right: 160px;
+}
+
+#menu_questions {
+	right: 0;
+}
+
+.menu .label {
+	border-bottom: 1px solid #000;
+	padding-bottom: 3px;
+	margin: 0 10px;
+}
+
+.menu ul {
+	background: #fff;
+	box-shadow: 2px 2px 0px #000;
+	display: none;
+	padding: 14px 10px 12px 10px;
+	-moz-box-shadow: 2px 2px 0px #000;
+	-webkit-box-shadow: 2px 2px 0px #000;
+}
+
+.menu.hover ul {
+	display: block;
+}
+
+.menu ul li {
+	border-bottom: 1px solid #000;
+	height: 15px;
+	padding-top: 2px;
+}
+
+.menu ul li a {
+	display: block;
+	height: 15px;
+}
+
+.person {
+	margin-bottom: 12px;
+}
+
+.person img {
+	display: block;
+	margin-right: 10px;
+	float: left;
+}
+
+.person .details {
+	float: left;
+	width: 140px;
+}
+
+.person .details strong {
+	font-weight: bold;
+}
+
+#welcome h2,
+.answer h2,
+.answer p {
+	margin-bottom: 12px;
+}
+
+#footer {
+	background: #fff;
+	bottom: 10px;
+	height: 21px;
+	left: 10px;
+	padding: 7px 10px 0 10px;
+	position: fixed;
+	right: 10px;
+}
+
+#ticker {
+	font: normal 12px/16px 'Open Sans', sans-serif;
+	position: relative;
+	text-transform: uppercase;
+}
+
+#ticker li {
+	float: left;
+}
+
+.tickercontainer .mask {
+	overflow: hidden;
+	position: relative;
+}

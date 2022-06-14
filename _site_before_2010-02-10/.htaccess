@@ -1,0 +1,10 @@
+#DirectoryIndex vbk.php index.html
+RewriteEngine on
+RewriteBase /
+RewriteRule ^content/ - [L]
+RewriteRule ^sitemap.xml$ sitemap.php [L]
+RewriteRule ^(.*)/$ $1/index.html
+RewriteRule ^index\.html$ /en/ [R,L]
+RewriteRule ^disclaimer\.html$ /nl/disclaimer.html [R,L]
+RewriteRule ^(.+)/index.html$ vbk.php?lang=$1 [L]
+RewriteRule ^(.+)/([0-9a-z]+).html$ vbk.php?id=$2&lang=$1

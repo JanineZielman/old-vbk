@@ -1,0 +1,38 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: black;
+	margin: 0;
+}
+a {
+	color: blue;
+	text-decoration: underline;
+}
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+}
+h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 0.75em;
+	margin-bottom: 0.33em;
+}
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+p {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+b {
+	font-weight: bold;
+}
+i {
+	font-style: italic;
+}

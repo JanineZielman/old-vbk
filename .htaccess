@@ -1,0 +1,41 @@
+RewriteEngine on
+RewriteBase /
+
+# Assure correct host
+RewriteCond %{HTTP_HOST} !^www\.vanbergenkolpa\.(nl|dev)$
+RewriteRule ^(.*)$ https://www.vanbergenkolpa.nl/$1 [R,L]
+
+# Prevent image hotlinking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://www\.vanbergenkolpa\.(nl|dev)/ [NC]
+RewriteRule \.(gif|jpg|png)$ - [F,NC,L]
+
+# Keep the CMS accessible
+RewriteRule ^content - [L]
+
+# Block out boilerplate directories
+RewriteRule ^cache/ - [R=404,L]
+RewriteRule ^templates/ - [R=404,L]
+RewriteRule ^controllers/ - [R=404,L]
+RewriteRule ^libs/ - [R=404,L]
+RewriteRule ^locales/ - [R=404,L]
+RewriteRule ^site/ - [R=404,L]
+
+# Resize thumbnails
+RewriteCond %{REQUEST_URI}%{QUERY_STRING} /images/([^/.]+).(jpg|png|gif)?w=([0-9]+)$
+RewriteRule ^(images/[^/.]+)\.(jpg|png|gif)$ tools/thumbnail.php?file_name=$1&extension=$2&w=%3&h=9999&c=false [L]
+RewriteCond %{REQUEST_URI}%{QUERY_STRING} /images/([^/.]+).(jpg|png|gif)?h=([0-9]+)$
+RewriteRule ^(images/[^/.]+)\.(jpg|png|gif)$ tools/thumbnail.php?file_name=$1&extension=$2&w=9999&h=%3&c=false [L]
+RewriteCond %{REQUEST_URI}%{QUERY_STRING} /images/([^/.]+).(jpg|png|gif)?w=([0-9]+)&h=([0-9]+)$
+RewriteRule ^(images/[^/.]+)\.(jpg|png|gif)$ tools/thumbnail.php?file_name=$1&extension=$2&w=%3&h=%4&c=false [L]
+RewriteCond %{REQUEST_URI}%{QUERY_STRING} /images/([^/.]+).(jpg|png|gif)?w=([0-9]+)&h=([0-9]+)&c=1$
+RewriteRule ^(images/[^/.]+)\.(jpg|png|gif)$ tools/thumbnail.php?file_name=$1&extension=$2&w=%3&h=%4&c=true [L]
+
+RewriteRule ^disclaimer\.html$ - [L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^$ /en/ [R]
+RewriteRule ^index\.html$ /en/ [R,L]
+RewriteRule ^(en|nl)/$ $1/index.html
+RewriteRule ^(en|nl)/index\.html$ main.php?realm=home&action=show&lang=$1 [L]
+RewriteRule ^(en|nl)/([0-9a-z]+)\.html$ main.php?realm=articles&action=legacy&param=$2&lang=$1 [L]
+RewriteRule ^(en|nl)/([0-9a-z]+)_[a-z0-9_]+\.html$ main.php?realm=articles&action=show&param=$2&lang=$1 [L]

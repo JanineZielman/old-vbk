@@ -1,0 +1,12 @@
+<FilesMatch "\.(js|css)$">
+Header set Cache-Control "must-revalidate, max-age=0"
+</FilesMatch>
+
+RewriteEngine on
+RewriteBase /parksupermarkt
+
+RewriteRule ^content - [L]
+
+RewriteRule ^$ main.php?realm=home&action=show [L]
+RewriteRule ^personen/([a-z0-9_]+)$ main.php?realm=answers&action=byperson&param=$1 [L]
+RewriteRule ^vragen/([a-z0-9_]+)$ main.php?realm=answers&action=byquestion&param=$1 [L]

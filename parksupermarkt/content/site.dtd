@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ENTITY %name
+    'name ID #REQUIRED'
+>
+
+<!ELEMENT site (atom*, list*) >
+<!ATTLIST site
+    %name;
+    languages CDATA #IMPLIED
+>
+
+<!ELEMENT atom (field*, list*) >
+<!ATTLIST atom
+	%name;
+    label CDATA #IMPLIED
+    fields CDATA #IMPLIED
+>
+
+<!ELEMENT field (param*) >
+<!ATTLIST atom
+	%name;
+	type (
+		string |
+		text |
+		image |
+		boolean |
+		integer |
+		enum |
+		link |
+		multilink |
+		file |
+		character
+	) #REQUIRED
+>
+
+<!ELEMENT param >
+<!ATTLIST param
+	%name;
+	value CDATA #REQUIRED
+>
+
+<!ELEMENT list >
+<!ATTLIST list
+	%name;
+	maxdepth CDATA #IMPLIED
+	ordering (default | custom) default
+	recursive (false | true) false
+	singleton (false | true) false
+	target IDREF #REQUIRED
+>

@@ -1,0 +1,53 @@
+<site name="van Bergen Kolpa Architecten" languages="nl;en" identifier="http://www.vanbergenkolpa.nl/">
+	<atom name="image" fields="image;youtubeurl">
+		<field name="imagesperrow" type="enum">
+			<param name="values" value="1;2;3" />
+		</field>
+		<field name="image" type="image">
+			<param name="width" value="9999" />
+			<param name="path" value="images/" />
+		</field>
+		<field name="youtubeurl" type="character">
+			<param name="size" value="50" />
+		</field>
+	</atom>
+
+	<atom name="text" fields="title">
+		<field name="title" type="string">
+			<param name="size" value="100" />
+		</field>
+		<field name="text" type="plaintext">
+			<param name="size" value="20" />
+		</field>
+		<list name="images" target="image" ordering="custom" />
+	</atom>
+
+	<atom name="section" fields="title">
+		<field name="title" type="string">
+			<param name="size" value="100" />
+		</field>
+		<list name="articles" target="text" ordering="custom" />
+	</atom>
+
+	<atom name="homepage">
+		<field name="text" type="plaintext">
+			<param name="size" value="10" />
+		</field>
+		<field name="color" type="enum">
+			<param name="values" value="009900;00cc00;ff9900;00ccff;ff33ff;ff3300;ff6600;ffcc00" />
+		</field>
+		<field name="article" type="link">
+			<param name="target" value="#text" />
+		</field>
+	</atom>
+
+	<atom name="recentimage" fields="image">
+		<field name="image" type="image">
+			<param name="path" value="images/" />
+		</field>
+	</atom>
+
+	<list name="message" target="homepage" singleton="true" />
+	<list name="sections" target="section" ordering="custom" />
+	<list name="recentimages" target="recentimage" ordering="custom" />
+</site>

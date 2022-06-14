@@ -1,0 +1,115 @@
+body {
+   font: 11px/1.6em Monaco,"Lucida Console",monospace;
+   color:#000000;
+   background-color:#ffffff;
+   margin:0 9px;
+   padding:0;
+}
+a:link, a:active, a:visited {
+   color:#000000;
+}
+a:hover {
+   text-decoration:underline;
+}
+hr {
+   height:1px;
+   border:none;
+   color:#000000;
+   background-color:#000000;
+}
+div#nav {
+	position: absolute;
+	width: 620px;
+	height: 65px;
+	z-index: 1;
+	left: 200px;
+	top: 4px;
+}
+div#navkop1 {
+	font: 11px/1.8em Monaco,"Lucida Console",monospace;
+	margin-top:3px;
+}
+div#navkop2 {
+   font: 11px/1.6em Monaco,"Lucida Console",monospace;
+   margin-top:3px;
+}
+div#navkop1 a:link, div#navkop1 a:visited {
+   color:#000000;
+   text-decoration:none;
+}
+div#navkop1 a:hover {
+   color: #000000;
+   text-decoration:underline;
+}
+div#navkop1 a.hier,
+div#navkop1 a.hier:visited {
+   text-decoration:underline;
+   color:#000000;
+}
+div#navkop2 a {
+   text-decoration:none;
+   color:#999999;
+}
+div#navkop2 a:hover {
+   text-decoration:underline;
+}
+div#navkop2 a.hier {
+   color:#000000;
+}
+.zwart {
+   color:#000000;
+}
+.bijschrift {
+   color:#999999;
+}
+.bijschrift a {
+   color:#999999;
+}
+div#beeld {
+   position: absolute;
+   left: 9px;
+   top: 81px;
+   width:400px;
+   margin-right:9px;
+   padding-bottom:40px;
+}
+div#text {
+   position: absolute;
+   left: 418px;
+   top: 81px;
+   margin-left:5px;
+   width:320px;
+   padding-bottom:40px;
+}
+div#recent {
+	padding-top: 12px;
+}
+.message {
+	position: absolute;
+	text-align: right;
+}
+.message a {
+	color: white;
+	font: 22px Monaco,"Lucida Console",monospace;
+	padding: 0 3px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.message a:hover {
+	text-decoration: none;
+}
+@media print {
+	div#nav {
+		width: 400px;
+	}
+	div#beeld {
+		width: 320px;
+	}
+	div#beeld img {
+		width: 320px;
+	}
+	div#text {
+		width: 255px;
+		left: 338px;
+	}
+}

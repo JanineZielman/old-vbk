@@ -1,0 +1,51 @@
+body {
+   font: 11px/1.6em Monaco,"Lucida Console",monospace;
+   color:#000000;
+   background-color:#ffffff;
+   margin:0 9px;
+   padding:0;
+}
+a:link, a:active, a:visited, a:hover {
+   color:#000000;
+   text-decoration:underline;
+}
+h1 {
+	font-size: x-large;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+td {
+	font: 11px/1.6em Monaco,"Lucida Console",monospace;
+	vertical-align: middle;
+}
+input, textarea {
+   font: 11px/1.6em Monaco,"Lucida Console",monospace;
+}
+.table_head {
+	background-color: black;
+}
+.table_head_text {
+	color: white;
+}
+.table_row {
+	background-color: #f0f0f0;
+}
+.table_white {
+	background-color: white;
+}
+.small { font-size: xx-small; }
+.listbox { width:300px; }
+.combobox { width:200px; }
+.button { border:0px solid black; padding:0px; width:94px; height:21px; background-color:white;}
+.color {
+	border: 1px solid black;
+	float: left;
+	height: 20px;
+	margin: 0 0 10px 0;
+	width: 20px;
+}
+input[name=color] {
+	clear: left;
+	float: left;
+}
